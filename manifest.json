@@ -1,0 +1,9 @@
+{
+    "name": "Link Exapnder",
+    "description": "Expand your links yo",
+    "version": 0.01,
+    "permissions": [
+        "activeTab"
+    ],
+    "manifest_version": 2
+}
