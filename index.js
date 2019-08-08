@@ -15,18 +15,22 @@ container.appendChild(textContent);
 
 const mapContainerToMousePosition = (e) => {
     let { pageX, pageY } = e;
+    var rt = (window.innerWidth - (pageX + 150));
     container.style.top = `${pageY + 20}px`;
-    container.style.left = `${pageX + 20}px`;
+    container.style.left = `${pageX + 20 - (rt < 0 ? 150 : 0)}px`;
 }
 
 const createContainer = () => {
     container.style.position = 'absolute';
     container.style.background = '#0F0F0F';
+    container.style.boxShadow = '0px 3px 10px rgba(0, 0, 0, 0.2)'
     container.style.minWidth = '105px';
     container.style.height = '30px';
     container.style.padding = '0 10px';
     container.style.pointerEvents = 'none';
     container.style.borderRadius = '2px';
+    container.style.zIndex = '16777271';
+    container.style.whiteSpace = 'nowrap';
     container.style.display = 'none';
 
     document.getElementsByTagName("body")[0].appendChild(container);
